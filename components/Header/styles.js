@@ -1,4 +1,8 @@
+import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
+
+const HostText = styled.p``;
 
 const ImgHeader = styled.header`
   position: sticky;
@@ -21,19 +25,33 @@ const ImgContainer = styled.div`
   cursor: pointer;
 `;
 
-const SearchInput = styled.input`
+const MuiSearchIcon = styled(SearchIcon)`
+  display: inline-flex;
+  background-color: tomato;
   border-radius: 15px;
-  padding-left: 5px;
-  flex-grow: 1;
-  border: 1px solid #dfdfdf;
-  color: gray;
-  font-size: small;
+  padding: 2px;
+  color: white;
+  cursor: pointer;
 `;
 
 const SearchContainer = styled.div`
   display: flex;
-  justify-content: center;
   padding: 2px;
 `;
 
-export default { ImgContainer, ImgHeader, SearchContainer, SearchInput };
+const SearchInput = styled(TextField)`
+  padding-left: 5px;
+  flex-grow: 1;
+  fieldset {
+    border-radius: 25px;
+  }
+`;
+
+export default {
+  HostText,
+  ImgContainer,
+  ImgHeader,
+  MuiSearchIcon,
+  SearchContainer,
+  SearchInput,
+};

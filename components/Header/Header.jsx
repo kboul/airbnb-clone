@@ -15,7 +15,13 @@ export default function Header() {
       </Styled.ImgContainer>
 
       <Styled.SearchContainer>
-        <Styled.SearchInput placeholder="Start your search" />
+        <Styled.SearchInput
+          placeholder="Start your search"
+          sx={{ input: { color: "gray", fontSize: "small" } }}
+          InputProps={{
+            endAdornment: <Styled.MuiSearchIcon />,
+          }}
+        />
       </Styled.SearchContainer>
     </Styled.ImgHeader>
   );
