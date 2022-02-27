@@ -9,6 +9,11 @@ const AppBarRightContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   color: gray;
+
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const AvatarContainer = styled.div`
@@ -27,12 +32,12 @@ const Container = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
   background-color: white;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  padding: 1.25rem; /* 20px */
+  padding: 0.5rem; /* 20px */
 
-  // Medium devices (tablets, 768px and up)
-  @media (min-width: 768px) {
-    padding-left: 2.5rem; /* 40px */
-    padding-right: 2.5rem; /* 40px */
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    display: flex;
+    padding: 20px;
   }
 `;
 
@@ -53,14 +58,14 @@ const ImageContainer = styled.div`
   cursor: pointer;
   margin-top: auto;
   margin-bottom: auto;
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const MuiLanguageIcon = styled(LanguageIcon)`
   padding-left: 5px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const MuiMenuIcon = styled(MenuIcon)`
@@ -69,26 +74,23 @@ const MuiMenuIcon = styled(MenuIcon)`
 
 const MuiSearchIcon = styled(SearchIcon)`
   display: inline-flex;
-  background-color: tomato;
-  border-radius: 15px;
-  padding: 3px;
-  color: white;
+  background-color: #ff385c;
+  border-radius: 50%;
+  color: rgb(255 255 255);
   cursor: pointer;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
+  padding: 3px;
 `;
 
 const SearchContainer = styled.div`
   display: flex;
-  padding: 2px;
-  justify-content: center;
+  align-items: center;
+  border-width: 2px;
+  border-radius: 9999px;
+  flex-grow: 1;
 `;
 
 const SearchInput = styled(TextField)`
-  padding-left: 5px;
-  flex-grow: 1;
+  width: 100%;
   fieldset {
     border-radius: 25px;
   }

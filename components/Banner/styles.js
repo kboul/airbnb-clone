@@ -6,33 +6,24 @@ const Container = styled.div`
   height: 300px;
   cursor: pointer;
 
-  @media (max-width: 768px) {
-    height: 400px;
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    height: 77vh;
   }
 
-  // Small devices (landscape phones, 576px and up)
-  @media (min-width: 576px) {
-    height: 400px;
+  /* Small Devices, .visible-sm-* */
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 80vh;
   }
 
-  // Medium devices (tablets, 768px and up)
-  @media (min-width: 768px) {
-    height: 300px;
+  /* Medium Devices, .visible-md-* */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    height: 80vh;
   }
 
-  // Large devices (desktops, 992px and up)
-  @media (min-width: 992px) {
-    height: 500px;
-  }
-
-  // X-Large devices (large desktops, 1200px and up)
+  /* Large Devices, .visible-lg-* */
   @media (min-width: 1200px) {
-    height: 600px;
-  }
-
-  // XX-Large devices (larger desktops, 1400px and up)
-  @media (min-width: 1400px) {
-    height: 700px;
+    height: 80vh;
   }
 `;
 
@@ -51,8 +42,8 @@ const BannerText = styled.p`
   line-height: 36px;
 
   @media (max-width: 576px) {
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 28px;
+    line-height: 32px;
   }
 `;
 
@@ -79,4 +70,9 @@ const FlexibleButton = styled.button`
   }
 `;
 
-export default { BannerText, BannerTextContainer, Container, FlexibleButton };
+export default {
+  BannerText,
+  BannerTextContainer,
+  Container,
+  FlexibleButton,
+};
