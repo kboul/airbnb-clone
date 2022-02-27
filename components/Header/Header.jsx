@@ -16,13 +16,16 @@ export default function Header() {
 
       <Styled.SearchContainer>
         <Styled.SearchInput
+          InputProps={{ endAdornment: <Styled.MuiSearchIcon /> }}
           placeholder="Start your search"
           sx={{ input: { color: "gray", fontSize: "small" } }}
-          InputProps={{
-            endAdornment: <Styled.MuiSearchIcon />,
-          }}
         />
       </Styled.SearchContainer>
+
+      <Styled.AvatarContainer>
+        <Styled.HostText>Become a host</Styled.HostText>
+        <Styled.MuiLanguageIcon />
+      </Styled.AvatarContainer>
     </Styled.ImgHeader>
   );
 }
