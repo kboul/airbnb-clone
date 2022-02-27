@@ -19,6 +19,23 @@ const AvatarContainer = styled.div`
   margin-left: 15px;
 `;
 
+const Container = styled.div`
+  position: sticky;
+  top: 0px;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  padding: 1.25rem; /* 20px */
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    padding-left: 2.5rem; /* 40px */
+    padding-right: 2.5rem; /* 40px */
+  }
+`;
+
 const HostText = styled.p`
   justify-content: flex-end;
   cursor: pointer;
@@ -28,26 +45,14 @@ const HostText = styled.p`
   }
 `;
 
-const ImageHeader = styled.header`
-  position: sticky;
-  z-index: 50;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  background-color: white;
-  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
-  padding: 5px;
-
-  @media (min-width: 768px) {
-    padding: 10px;
-  }
-`;
-
 const ImageContainer = styled.div`
   position: relative;
   display: flex;
-  height: 50px;
+  align-items: center;
+  height: 2.5rem; /* 40px */
   cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
 `;
 
 const MuiLanguageIcon = styled(LanguageIcon)`
@@ -96,9 +101,9 @@ const SearchInput = styled(TextField)`
 export default {
   AvatarContainer,
   AppBarRightContainer,
+  Container,
   HostText,
   ImageContainer,
-  ImageHeader,
   MuiLanguageIcon,
   MuiMenuIcon,
   MuiSearchIcon,

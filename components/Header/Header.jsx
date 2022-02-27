@@ -2,16 +2,17 @@ import Image from "next/image";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import Styled from "./styles";
+import airbnbLogo from "./airbnb-logo.png";
 
 export default function Header() {
   return (
-    <Styled.ImageHeader>
+    <Styled.Container>
       <Styled.ImageContainer>
         <Image
           layout="fill"
           objectFit="contain"
           objectPosition="left"
-          src="https://links.papareact.com/qd3"
+          src={airbnbLogo}
         />
       </Styled.ImageContainer>
 
@@ -32,6 +33,6 @@ export default function Header() {
           <AccountCircleIcon />
         </Styled.AvatarContainer>
       </Styled.AppBarRightContainer>
-    </Styled.ImageHeader>
+    </Styled.Container>
   );
 }
