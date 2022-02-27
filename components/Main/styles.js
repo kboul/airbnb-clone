@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-const ExploreHeader = styled.h2`
-  font-size: 2.25rem; /* 36px */
-  line-height: 2.5rem; /* 40px */
+const ExploreH2 = styled.h2`
+  // all official
+  font-size: 33px;
+  line-height: 37px;
   font-weight: 600;
-  padding-bottom: 1.25rem; /* 20px */
+  letter-spacing: -0.02em;
 `;
 
 const MainContainer = styled.main`
@@ -26,4 +27,24 @@ const Section = styled.section`
   padding-top: 1.5rem; /* 24px */
 `;
 
-export default { ExploreHeader, MainContainer, Section };
+const SmallCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  /* Small Devices, .visible-sm-* */
+  @media (min-width: 768px) and (max-width: 991px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Large Devices, .visible-lg-* */
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  // XX-Large devices (larger desktops, 1400px and up)
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+`;
+
+export default { ExploreH2, MainContainer, Section, SmallCardContainer };

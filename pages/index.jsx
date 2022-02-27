@@ -1,8 +1,9 @@
 import Head from "next/head";
 
 import { Banner, Header, Main } from "../components";
+import exploreDataModel from "../models/exploreData";
 
-export default function Home() {
+export default function Home({ exploreData }) {
   return (
     <>
       <Head>
@@ -15,7 +16,16 @@ export default function Home() {
 
       <Banner />
 
-      <Main />
+      <Main exploreData={exploreData} />
     </>
   );
+}
+
+Home.propTypes = exploreDataModel;
+
+// prefetch this info on the server before painting the page
+export async function getStaticProps() {
+  const response = await fetch("http://localhost:3000/api/exploreData");
+  const exploreData = await response.json();
+  return { props: { exploreData } };
 }
