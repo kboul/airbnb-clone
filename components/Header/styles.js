@@ -110,5 +110,5 @@ export default {
   MuiMenuIcon,
   MuiSearchIcon,
   SearchContainer,
-  SearchInput,
+  SearchInput
 };
