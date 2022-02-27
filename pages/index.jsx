@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Header from "../components";
+import { Banner, Header } from "../components";
 
 export default function Home() {
   return (
@@ -12,6 +12,8 @@ export default function Home() {
       </Head>
 
       <Header />
+
+      <Banner />
     </>
   );
 }

@@ -28,7 +28,7 @@ const HostText = styled.p`
   }
 `;
 
-const ImgHeader = styled.header`
+const ImageHeader = styled.header`
   position: sticky;
   z-index: 50;
   display: grid;
@@ -43,7 +43,7 @@ const ImgHeader = styled.header`
   }
 `;
 
-const ImgContainer = styled.div`
+const ImageContainer = styled.div`
   position: relative;
   display: flex;
   height: 50px;
@@ -97,8 +97,8 @@ export default {
   AvatarContainer,
   AppBarRightContainer,
   HostText,
-  ImgContainer,
-  ImgHeader,
+  ImageContainer,
+  ImageHeader,
   MuiLanguageIcon,
   MuiMenuIcon,
   MuiSearchIcon,

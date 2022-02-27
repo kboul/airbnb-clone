@@ -5,15 +5,15 @@ import Styled from "./styles";
 
 export default function Header() {
   return (
-    <Styled.ImgHeader>
-      <Styled.ImgContainer>
+    <Styled.ImageHeader>
+      <Styled.ImageContainer>
         <Image
           layout="fill"
           objectFit="contain"
           objectPosition="left"
           src="https://links.papareact.com/qd3"
         />
-      </Styled.ImgContainer>
+      </Styled.ImageContainer>
 
       <Styled.SearchContainer>
         <Styled.SearchInput
@@ -32,6 +32,6 @@ export default function Header() {
           <AccountCircleIcon />
         </Styled.AvatarContainer>
       </Styled.AppBarRightContainer>
-    </Styled.ImgHeader>
+    </Styled.ImageHeader>
   );
 }
