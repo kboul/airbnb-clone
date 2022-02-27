@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import Styled from "./styles";
 
@@ -22,10 +23,15 @@ export default function Header() {
         />
       </Styled.SearchContainer>
 
-      <Styled.AvatarContainer>
+      <Styled.AppBarRightContainer>
         <Styled.HostText>Become a host</Styled.HostText>
         <Styled.MuiLanguageIcon />
-      </Styled.AvatarContainer>
+
+        <Styled.AvatarContainer>
+          <Styled.MuiMenuIcon />
+          <AccountCircleIcon />
+        </Styled.AvatarContainer>
+      </Styled.AppBarRightContainer>
     </Styled.ImgHeader>
   );
 }
