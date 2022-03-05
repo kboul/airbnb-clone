@@ -1,5 +1,4 @@
 import SmallCard from "../SmallCard";
-
 import Styled from "./styles";
 import exploreDataModel from "../../models/exploreData";
 
