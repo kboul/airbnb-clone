@@ -5,7 +5,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   margin: 0.5rem; /* 8px */
-  margin-left: 1rem; /* 16px */
   border-radius: 0.75rem; /* 12px */
   cursor: pointer;
 
