@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Banner, Header, Main } from "../components";
+import { Banner, Footer, Header, Main } from "../components";
 import exploreDataModel from "../models/exploreData";
 import cardsDataModel from "../models/cardsData";
 
@@ -18,6 +18,8 @@ export default function Home({ cardsData, exploreData }) {
       <Banner />
 
       <Main cardsData={cardsData} exploreData={exploreData} />
+
+      <Footer />
     </>
   );
 }
