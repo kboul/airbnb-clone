@@ -2,8 +2,9 @@ import Head from "next/head";
 
 import { Banner, Header, Main } from "../components";
 import exploreDataModel from "../models/exploreData";
+import cardsDataModel from "../models/cardsData";
 
-export default function Home({ exploreData }) {
+export default function Home({ cardsData, exploreData }) {
   return (
     <>
       <Head>
@@ -16,16 +17,22 @@ export default function Home({ exploreData }) {
 
       <Banner />
 
-      <Main exploreData={exploreData} />
+      <Main cardsData={cardsData} exploreData={exploreData} />
     </>
   );
 }
 
-Home.propTypes = exploreDataModel;
+Home.propTypes = { ...exploreDataModel, ...cardsDataModel };
 
 // prefetch this info on the server before painting the page
 export async function getStaticProps() {
-  const response = await fetch("http://localhost:3000/api/exploreData");
-  const exploreData = await response.json();
-  return { props: { exploreData } };
+  const exploreDataResponse = await fetch(
+    "http://localhost:3000/api/exploreData"
+  );
+  const exploreData = await exploreDataResponse.json();
+
+  const cardsDataResponse = await fetch("http://localhost:3000/api/cardsData");
+  const cardsData = await cardsDataResponse.json();
+
+  return { props: { exploreData, cardsData } };
 }

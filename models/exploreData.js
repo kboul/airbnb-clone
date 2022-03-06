@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export const exploreItem = {
   distance: PropTypes.string,
-  id: PropTypes.number,
+  id: PropTypes.string,
   img: PropTypes.string,
   location: PropTypes.string
 };

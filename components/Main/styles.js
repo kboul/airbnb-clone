@@ -1,12 +1,28 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const ExploreH2 = styled.h2`
-  // all official
+const h2Styles = css`
   font-size: 33px;
   line-height: 37px;
   font-weight: 600;
   letter-spacing: -0.02em;
 `;
+
+const ExploreH2 = styled.h2`
+  // all official
+  ${h2Styles}
+`;
+
+const ExploreNearBySection = styled.section`
+  padding-top: 1.5rem; /* 24px */
+`;
+
+const LiveAnywhereH2 = styled.h2`
+  ${h2Styles}
+  padding-top: 2rem; /* 32px */
+  padding-bottom: 2rem; /* 32px */
+`;
+
+const LiveAnywhereSection = styled.section``;
 
 const MainContainer = styled.main`
   // creates spacing on the right left sides
@@ -23,8 +39,14 @@ const MainContainer = styled.main`
   }
 `;
 
-const Section = styled.section`
-  padding-top: 1.5rem; /* 24px */
+const MediumCardContainer = styled.div`
+  display: flex;
+  gap: 15px;
+
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    overflow-x: scroll;
+  }
 `;
 
 const SmallCardContainer = styled.div`
@@ -47,4 +69,12 @@ const SmallCardContainer = styled.div`
   }
 `;
 
-export default { ExploreH2, MainContainer, Section, SmallCardContainer };
+export default {
+  ExploreH2,
+  ExploreNearBySection,
+  LiveAnywhereH2,
+  LiveAnywhereSection,
+  MainContainer,
+  MediumCardContainer,
+  SmallCardContainer
+};

@@ -1,5 +1,5 @@
 import Styled from "./styles";
-import { exploreItem } from "../../models/exploreData";
+import { exploreItem } from "../../../models/exploreData";
 
 export default function SmallCard({ distance, id, img, location }) {
   return (
