@@ -41,7 +41,7 @@ const BannerText = styled.p`
   letter-spacing: -0.02em;
   line-height: 36px;
 
-  @media (max-width: 576px) {
+  @media (max-width: 767px) {
     font-size: 28px;
     line-height: 32px;
   }
