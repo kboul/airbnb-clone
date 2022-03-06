@@ -6,7 +6,7 @@ import cardsDataModel from "../../models/cardsData";
 
 export default function Main({ cardsData, exploreData }) {
   return (
-    <Styled.MainContainer>
+    <Styled.Container>
       <Styled.ExploreNearBySection>
         <Styled.ExploreH2>Explore Nearby</Styled.ExploreH2>
 
@@ -26,7 +26,7 @@ export default function Main({ cardsData, exploreData }) {
           ))}
         </Styled.MediumCardContainer>
       </Styled.LiveAnywhereSection>
-    </Styled.MainContainer>
+    </Styled.Container>
   );
 }
 

@@ -7,6 +7,21 @@ const h2Styles = css`
   letter-spacing: -0.02em;
 `;
 
+const Container = styled.main`
+  // creates spacing on the right left sides
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem; /* 32px */
+  padding-right: 2rem; /* 32px */
+
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    padding-left: 4rem; /* 64px */
+    padding-right: 4rem; /* 64px */
+  }
+`;
+
 const ExploreH2 = styled.h2`
   // all official
   ${h2Styles}
@@ -23,21 +38,6 @@ const LiveAnywhereH2 = styled.h2`
 `;
 
 const LiveAnywhereSection = styled.section``;
-
-const MainContainer = styled.main`
-  // creates spacing on the right left sides
-  max-width: 80rem; /* 1280px */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem; /* 32px */
-  padding-right: 2rem; /* 32px */
-
-  /* Extra Small Devices, .visible-xs-* */
-  @media (max-width: 767px) {
-    padding-left: 4rem; /* 64px */
-    padding-right: 4rem; /* 64px */
-  }
-`;
 
 const MediumCardContainer = styled.div`
   display: flex;
@@ -70,11 +70,11 @@ const SmallCardContainer = styled.div`
 `;
 
 export default {
+  Container,
   ExploreH2,
   ExploreNearBySection,
   LiveAnywhereH2,
   LiveAnywhereSection,
-  MainContainer,
   MediumCardContainer,
   SmallCardContainer
 };

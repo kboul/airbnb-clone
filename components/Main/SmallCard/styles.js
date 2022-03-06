@@ -4,7 +4,8 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   align-items: center;
-  margin: 0.5rem; /* 8px */
+  gap: 5px;
+  margin-right: 1rem; /* 8px */
   border-radius: 0.75rem; /* 12px */
   cursor: pointer;
 
