@@ -42,10 +42,11 @@ const LiveAnywhereSection = styled.section``;
 const MediumCardContainer = styled.div`
   display: flex;
   gap: 15px;
-
-  /* Extra Small Devices, .visible-xs-* */
-  @media (max-width: 767px) {
-    overflow-x: scroll;
+  overflow: scroll;
+  overflow-y: hidden;
+  padding: 0.75rem; /* 12px */
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;
 
