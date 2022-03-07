@@ -27,7 +27,7 @@ export default function Home({ cardsData, exploreData }) {
 Home.propTypes = { ...exploreDataModel, ...cardsDataModel };
 
 // prefetch this info on the server before painting the page
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const exploreDataResponse = await fetch(
     "http://localhost:3000/api/exploreData"
   );
