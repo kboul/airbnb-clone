@@ -1,7 +1,8 @@
-import LanguageIcon from "@mui/icons-material/Language";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@heroicons/react/solid/SearchIcon";
 import styled from "styled-components";
+import GlobeAltIcon from "@heroicons/react/solid/GlobeAltIcon";
+import MenuIcon from "@heroicons/react/solid/MenuIcon";
+import SearchIcon from "@heroicons/react/solid/SearchIcon";
+import UserCircleIcon from "@heroicons/react/solid/UserCircleIcon";
 
 const AppBarRightContainer = styled.div`
   display: flex;
@@ -75,12 +76,18 @@ const ImageContainer = styled.div`
   }
 `;
 
-const MuiLanguageIcon = styled(LanguageIcon)`
+const HeroGlobeAltIcon = styled(GlobeAltIcon)`
   padding-left: 5px;
+  height: 1.5rem; /* 24px */
 `;
 
-const MuiMenuIcon = styled(MenuIcon)`
+const HeroMenuIcon = styled(MenuIcon)`
   margin-right: 5px;
+  height: 1.5rem; /* 24px */
+`;
+
+const HeroUserCircleIcon = styled(UserCircleIcon)`
+  height: 1.5rem; /* 24px */
 `;
 
 const SearchInputContainer = styled.div`
@@ -123,11 +130,12 @@ export default {
   AvatarContainer,
   AppBarRightContainer,
   Container,
+  HeroGlobeAltIcon,
+  HeroMenuIcon,
   HeroSearchIcon,
+  HeroUserCircleIcon,
   HostText,
   ImageContainer,
-  MuiLanguageIcon,
-  MuiMenuIcon,
   SearchInputContainer,
   SearchInput
 };

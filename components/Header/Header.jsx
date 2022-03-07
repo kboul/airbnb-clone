@@ -1,5 +1,4 @@
 import Image from "next/image";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import Styled from "./styles";
 import airbnbLogo from "./airbnb-logo.png";
@@ -23,11 +22,11 @@ export default function Header() {
 
       <Styled.AppBarRightContainer>
         <Styled.HostText>Become a host</Styled.HostText>
-        <Styled.MuiLanguageIcon />
+        <Styled.HeroGlobeAltIcon />
 
         <Styled.AvatarContainer>
-          <Styled.MuiMenuIcon />
-          <AccountCircleIcon />
+          <Styled.HeroMenuIcon />
+          <Styled.HeroUserCircleIcon />
         </Styled.AvatarContainer>
       </Styled.AppBarRightContainer>
     </Styled.Container>
