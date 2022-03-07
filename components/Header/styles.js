@@ -42,6 +42,15 @@ const Container = styled.div`
   }
 `;
 
+const DateRangePickerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3 / span 3;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+`;
+
 const HeroSearchIcon = styled(SearchIcon)`
   height: 2rem; /* 32px */
   background-color: rgb(248 113 113);
@@ -131,6 +140,7 @@ export default {
   AvatarContainer,
   AppBarRightContainer,
   Container,
+  DateRangePickerContainer,
   HeroGlobeAltIcon,
   HeroMenuIcon,
   HeroSearchIcon,

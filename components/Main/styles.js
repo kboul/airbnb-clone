@@ -22,7 +22,7 @@ const Container = styled.main`
   }
 `;
 
-const ExploreH2 = styled.h2`
+const ExploreHeader = styled.h2`
   // all official
   ${h2Styles}
 `;
@@ -31,7 +31,7 @@ const ExploreNearBySection = styled.section`
   padding-top: 1.5rem; /* 24px */
 `;
 
-const LiveAnywhereH2 = styled.h2`
+const LiveAnywhereHeader = styled.h2`
   ${h2Styles}
   padding-top: 2rem; /* 32px */
   padding-bottom: 2rem; /* 32px */
@@ -76,9 +76,9 @@ const SmallCardContainer = styled.div`
 
 export default {
   Container,
-  ExploreH2,
+  ExploreHeader,
   ExploreNearBySection,
-  LiveAnywhereH2,
+  LiveAnywhereHeader,
   LiveAnywhereSection,
   MediumCardContainer,
   SmallCardContainer

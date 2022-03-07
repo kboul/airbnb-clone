@@ -10,7 +10,7 @@ export default function Main({ cardsData, exploreData }) {
   return (
     <Styled.Container>
       <Styled.ExploreNearBySection>
-        <Styled.ExploreH2>Explore Nearby</Styled.ExploreH2>
+        <Styled.ExploreHeader>Explore Nearby</Styled.ExploreHeader>
 
         <Styled.SmallCardContainer>
           {exploreData?.map(item => (
@@ -20,7 +20,7 @@ export default function Main({ cardsData, exploreData }) {
       </Styled.ExploreNearBySection>
 
       <Styled.LiveAnywhereSection>
-        <Styled.LiveAnywhereH2>Live Anywhere</Styled.LiveAnywhereH2>
+        <Styled.LiveAnywhereHeader>Live Anywhere</Styled.LiveAnywhereHeader>
 
         <Styled.MediumCardContainer>
           {cardsData.map(item => (
