@@ -1,5 +1,4 @@
 import Image from "next/image";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import Styled from "./styles";
 import airbnbLogo from "./airbnb-logo.png";
@@ -16,21 +15,18 @@ export default function Header() {
         />
       </Styled.ImageContainer>
 
-      <Styled.SearchContainer>
-        <Styled.SearchInput
-          InputProps={{ endAdornment: <Styled.MuiSearchIcon /> }}
-          placeholder="Where are you going?"
-          sx={{ input: { color: "gray", fontSize: "small" } }}
-        />
-      </Styled.SearchContainer>
+      <Styled.SearchInputContainer>
+        <Styled.SearchInput placeholder="Where are you going?" />
+        <Styled.HeroSearchIcon />
+      </Styled.SearchInputContainer>
 
       <Styled.AppBarRightContainer>
         <Styled.HostText>Become a host</Styled.HostText>
-        <Styled.MuiLanguageIcon />
+        <Styled.HeroGlobeAltIcon />
 
         <Styled.AvatarContainer>
-          <Styled.MuiMenuIcon />
-          <AccountCircleIcon />
+          <Styled.HeroMenuIcon />
+          <Styled.HeroUserCircleIcon />
         </Styled.AvatarContainer>
       </Styled.AppBarRightContainer>
     </Styled.Container>
