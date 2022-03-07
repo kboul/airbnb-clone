@@ -28,12 +28,15 @@ Home.propTypes = { ...exploreDataModel, ...cardsDataModel };
 
 // prefetch this info on the server before painting the page
 export async function getStaticProps() {
-  const exploreDataResponse = await fetch(
-    "http://localhost:3000/api/exploreData"
-  );
+  const dev = process.env.NODE_ENV !== "production";
+  const apiUrl = dev
+    ? "http://localhost:3000"
+    : "https://airbnb-clone-kboul.vercel.app/";
+
+  const exploreDataResponse = await fetch(`${apiUrl}/api/exploreData`);
   const exploreData = await exploreDataResponse.json();
 
-  const cardsDataResponse = await fetch("http://localhost:3000/api/cardsData");
+  const cardsDataResponse = await fetch(`${apiUrl}/api/cardsData`);
   const cardsData = await cardsDataResponse.json();
 
   return { props: { exploreData, cardsData } };
