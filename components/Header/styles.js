@@ -1,7 +1,6 @@
-import TextField from "@mui/material/TextField";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+import SearchIcon from "@heroicons/react/solid/SearchIcon";
 import styled from "styled-components";
 
 const AppBarRightContainer = styled.div`
@@ -41,6 +40,17 @@ const Container = styled.div`
   }
 `;
 
+const HeroSearchIcon = styled(SearchIcon)`
+  height: 2rem; /* 32px */
+  background-color: rgb(248 113 113);
+  border-radius: 9999px;
+  color: rgb(255 255 255);
+  cursor: pointer;
+  padding: 0.5rem; /* 8px */
+  margin-left: 0.5rem; /* 8px */
+  margin-right: 0.5rem; /* 8px */
+`;
+
 const HostText = styled.p`
   justify-content: flex-end;
   cursor: pointer;
@@ -58,6 +68,7 @@ const ImageContainer = styled.div`
   cursor: pointer;
   margin-top: auto;
   margin-bottom: auto;
+
   /* Extra Small Devices, .visible-xs-* */
   @media (max-width: 767px) {
     display: none;
@@ -72,31 +83,39 @@ const MuiMenuIcon = styled(MenuIcon)`
   margin-right: 5px;
 `;
 
-const MuiSearchIcon = styled(SearchIcon)`
-  display: inline-flex;
-  background-color: #ff385c;
-  border-radius: 50%;
-  color: rgb(255 255 255);
-  cursor: pointer;
-  padding: 3px;
-`;
-
-const SearchContainer = styled.div`
+const SearchInputContainer = styled.div`
   display: flex;
   align-items: center;
-  border-width: 2px;
+  border: 2px solid #ddd;
   border-radius: 9999px;
-  flex-grow: 1;
-`;
+  padding-top: 0.5rem; /* 8px */
+  padding-bottom: 0.5rem; /* 8px */
+  padding-left: 1.25rem; /* 20px */
 
-const SearchInput = styled(TextField)`
-  width: 100%;
-  fieldset {
-    border-radius: 25px;
+  // Small devices
+  @media (max-width: 767px) {
+    width: 100%;
   }
 
-  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  // Medium Devices
+  @media (min-width: 768px) and (max-width: 1200px) {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+`;
+
+const SearchInput = styled.input`
+  display: flex;
+  border: none;
+  background-color: transparent;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  flex-grow: 1;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  color: rgb(75 85 99);
+
+  ::placeholder {
+    color: #cbd5e0;
   }
 `;
 
@@ -104,11 +123,11 @@ export default {
   AvatarContainer,
   AppBarRightContainer,
   Container,
+  HeroSearchIcon,
   HostText,
   ImageContainer,
   MuiLanguageIcon,
   MuiMenuIcon,
-  MuiSearchIcon,
-  SearchContainer,
+  SearchInputContainer,
   SearchInput
 };

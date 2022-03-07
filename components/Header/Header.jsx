@@ -16,13 +16,10 @@ export default function Header() {
         />
       </Styled.ImageContainer>
 
-      <Styled.SearchContainer>
-        <Styled.SearchInput
-          InputProps={{ endAdornment: <Styled.MuiSearchIcon /> }}
-          placeholder="Where are you going?"
-          sx={{ input: { color: "gray", fontSize: "small" } }}
-        />
-      </Styled.SearchContainer>
+      <Styled.SearchInputContainer>
+        <Styled.SearchInput placeholder="Where are you going?" />
+        <Styled.HeroSearchIcon />
+      </Styled.SearchInputContainer>
 
       <Styled.AppBarRightContainer>
         <Styled.HostText>Become a host</Styled.HostText>

@@ -52,19 +52,23 @@ const MediumCardContainer = styled.div`
 
 const SmallCardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
 
-  /* Small Devices, .visible-sm-* */
-  @media (min-width: 768px) and (max-width: 991px) {
+  // Small devices
+  @media (min-width: 767px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  // Medium Devices
+  @media (min-width: 768px) and (max-width: 1200px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* Large Devices, .visible-lg-* */
+  // Large Devices
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  // XX-Large devices (larger desktops, 1400px and up)
+  // XX-Large devices
   @media (min-width: 1400px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
