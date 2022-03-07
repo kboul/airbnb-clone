@@ -14,6 +14,11 @@ const Button = styled.button`
   border-radius: 0.75rem; /* 12px */
   margin-top: 1.25rem; /* 20px */
   cursor: pointer;
+
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    margin-top: 0rem; /* 20px */
+  }
 `;
 
 const Container = styled.div`
@@ -39,6 +44,12 @@ const MetaContainer = styled.div`
   position: absolute;
   top: 8rem; /* 128px */
   left: 3rem; /* 48px */
+
+  /* Extra Small Devices, .visible-xs-* */
+  @media (max-width: 767px) {
+    top: 3rem; /* 128px */
+    left: 1.5rem; /* 48px */
+  }
 `;
 
 const Title = styled.h3`
