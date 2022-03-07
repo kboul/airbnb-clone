@@ -22,6 +22,7 @@ const AvatarContainer = styled.div`
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   margin-left: 15px;
+  cursor: pointer;
 `;
 
 const Container = styled.div`
@@ -49,6 +50,12 @@ const DateRangePickerContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+`;
+
+const GuestsHeader = styled.h2`
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+  padding-left: 0.5rem; /* 8px */
 `;
 
 const HeroSearchIcon = styled(SearchIcon)`
@@ -93,6 +100,7 @@ const ImageContainer = styled.div`
 const HeroGlobeAltIcon = styled(GlobeAltIcon)`
   padding-left: 5px;
   height: 1.5rem; /* 24px */
+  cursor: pointer;
 `;
 
 const HeroMenuIcon = styled(MenuIcon)`
@@ -145,6 +153,7 @@ export default {
   AppBarRightContainer,
   Container,
   DateRangePickerContainer,
+  GuestsHeader,
   HeroGlobeAltIcon,
   HeroMenuIcon,
   HeroSearchIcon,
