@@ -34,7 +34,7 @@ const Container = styled.div`
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   padding: 1.25rem; /* 20px */
 
-  /* Extra Small Devices, .visible-xs-* */
+  // Small Devices
   @media (max-width: 767px) {
     display: flex;
     padding-left: 2.5rem; /* 40px */
@@ -60,6 +60,10 @@ const HeroSearchIcon = styled(SearchIcon)`
   padding: 0.5rem; /* 8px */
   margin-left: 0.5rem; /* 8px */
   margin-right: 0.5rem; /* 8px */
+
+  @media (min-width: 767px) and (max-width: 850px) {
+    display: none;
+  }
 `;
 
 const HostText = styled.p`
@@ -80,7 +84,7 @@ const ImageContainer = styled.div`
   margin-top: auto;
   margin-bottom: auto;
 
-  /* Extra Small Devices, .visible-xs-* */
+  // Small Devices
   @media (max-width: 767px) {
     display: none;
   }
