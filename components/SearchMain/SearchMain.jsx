@@ -1,17 +1,9 @@
-import { useRouter } from "next/router";
-import { format } from "date-fns";
+import PropTypes from "prop-types";
 
 import Styled from "./styles";
 import { bubbleOptions } from "./constants";
 
-export default function SearchMain() {
-  const router = useRouter();
-  const { location, startDate, endDate, numOfGuests } = router.query;
-
-  const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
-  const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
-  const range = `${formattedStartDate} - ${formattedEndDate}`;
-
+export default function SearchMain({ numOfGuests, location, range }) {
   return (
     <Styled.Container>
       <Styled.Section>
@@ -29,3 +21,9 @@ export default function SearchMain() {
     </Styled.Container>
   );
 }
+
+SearchMain.propTypes = {
+  numOfGuests: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  range: PropTypes.string.isRequired
+};

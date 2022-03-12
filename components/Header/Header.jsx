@@ -4,13 +4,14 @@ import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useRouter } from "next/router";
+import PropTypes from "prop-types";
 
 import Styled from "./styles";
 import airbnbLogo from "./airbnb-logo.png";
 import { getSelectionRange } from "./utils";
 import { rangeColors } from "./constants";
 
-export default function Header() {
+export default function Header({ placeholder }) {
   const router = useRouter();
 
   const [searchInput, setSearchInput] = useState("");
@@ -60,7 +61,7 @@ export default function Header() {
       <Styled.SearchInputContainer>
         <Styled.SearchInput
           onChange={handleSearchInputChange}
-          placeholder="Where are you going?"
+          placeholder={placeholder || "Where are you going?"}
           value={searchInput}
         />
         <Styled.HeroSearchIcon />
@@ -109,3 +110,7 @@ export default function Header() {
     </Styled.Container>
   );
 }
+
+Header.propTypes = {
+  placeholder: PropTypes.string
+};
