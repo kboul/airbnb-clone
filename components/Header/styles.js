@@ -128,6 +128,17 @@ const NumberOfGuestsHeader = styled.h2`
   margin-bottom: 0px;
 `;
 
+const NumberOfGuestsInput = styled.input`
+  width: 3rem; /* 48px */
+  padding-left: 0.5rem; /* 8px */
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  color: rgb(248 113 113);
+  border: 0px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+`;
+
 const SearchInputContainer = styled.div`
   display: flex;
   align-items: center;
@@ -173,6 +184,7 @@ export default {
   ImageContainer,
   NumberOfGuestsContainer,
   NumberOfGuestsHeader,
+  NumberOfGuestsInput,
   SearchInputContainer,
   SearchInput
 };

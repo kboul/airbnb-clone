@@ -13,6 +13,7 @@ export default function Header() {
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+  const [numOfGuests, setNumOfGuests] = useState(1);
 
   const selectionRange = getSelectionRange(startDate, endDate);
 
@@ -22,6 +23,8 @@ export default function Header() {
     setStartDate(ranges.selection.startDate);
     setStartDate(ranges.selection.endDate);
   };
+
+  const handleNumOfGuestsChange = e => setNumOfGuests(e.target.value);
 
   return (
     <Styled.Container>
@@ -66,6 +69,12 @@ export default function Header() {
               Number of Guests
             </Styled.NumberOfGuestsHeader>
             <Styled.HeroUsersIcon />
+            <Styled.NumberOfGuestsInput
+              min={1}
+              onChange={handleNumOfGuestsChange}
+              type="number"
+              value={numOfGuests}
+            />
           </Styled.NumberOfGuestsContainer>
         </Styled.DateRangePickerContainer>
       )}
