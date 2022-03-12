@@ -26,6 +26,8 @@ export default function Header() {
 
   const handleNumOfGuestsChange = e => setNumOfGuests(e.target.value);
 
+  const handleCancelClick = () => setSearchInput("");
+
   return (
     <Styled.Container>
       <Styled.ImageContainer>
@@ -76,6 +78,12 @@ export default function Header() {
               value={numOfGuests}
             />
           </Styled.NumberOfGuestsContainer>
+          <Styled.ButtonContainer>
+            <Styled.CancelButton onClick={handleCancelClick}>
+              Cancel
+            </Styled.CancelButton>
+            <Styled.SearchButton>Search</Styled.SearchButton>
+          </Styled.ButtonContainer>
         </Styled.DateRangePickerContainer>
       )}
     </Styled.Container>

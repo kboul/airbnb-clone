@@ -5,6 +5,12 @@ import SearchIcon from "@heroicons/react/solid/SearchIcon";
 import UserCircleIcon from "@heroicons/react/solid/UserCircleIcon";
 import UsersIcon from "@heroicons/react/solid/UsersIcon";
 
+const Button = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
 const AppBarRightContainer = styled.div`
   display: flex;
   align-items: center;
@@ -24,6 +30,15 @@ const AvatarContainer = styled.div`
   border-radius: 30px;
   margin-left: 15px;
   cursor: pointer;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const CancelButton = styled(Button)`
+  color: rgb(107 114 128);
 `;
 
 const Container = styled.div`
@@ -118,6 +133,7 @@ const NumberOfGuestsContainer = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem; /* 16px */
 `;
 
 const NumberOfGuestsHeader = styled.h2`
@@ -137,6 +153,10 @@ const NumberOfGuestsInput = styled.input`
   border: 0px;
   outline: 2px solid transparent;
   outline-offset: 2px;
+`;
+
+const SearchButton = styled(Button)`
+  color: rgb(248 113 113);
 `;
 
 const SearchInputContainer = styled.div`
@@ -173,6 +193,8 @@ const SearchInput = styled.input`
 export default {
   AvatarContainer,
   AppBarRightContainer,
+  ButtonContainer,
+  CancelButton,
   Container,
   DateRangePickerContainer,
   HeroGlobeAltIcon,
@@ -185,6 +207,7 @@ export default {
   NumberOfGuestsContainer,
   NumberOfGuestsHeader,
   NumberOfGuestsInput,
+  SearchButton,
   SearchInputContainer,
   SearchInput
 };
