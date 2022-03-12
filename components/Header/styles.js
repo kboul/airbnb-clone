@@ -37,9 +37,7 @@ const Container = styled.div`
 
   // Small Devices
   @media (max-width: 767px) {
-    display: flex;
-    padding-left: 2.5rem; /* 40px */
-    padding-right: 2.5rem; /* 40px */
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 `;
 
@@ -50,6 +48,11 @@ const DateRangePickerContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+
+  @media (max-width: 767px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 `;
 
 const GuestsHeader = styled.h2`
@@ -77,7 +80,7 @@ const HostText = styled.p`
   justify-content: flex-end;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
@@ -120,11 +123,6 @@ const SearchInputContainer = styled.div`
   padding-top: 0.5rem; /* 8px */
   padding-bottom: 0.5rem; /* 8px */
   padding-left: 1.25rem; /* 20px */
-
-  // Small devices
-  @media (max-width: 767px) {
-    width: 100%;
-  }
 
   // Medium Devices
   @media (min-width: 768px) and (max-width: 1200px) {
