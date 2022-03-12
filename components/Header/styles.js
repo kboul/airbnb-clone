@@ -3,6 +3,7 @@ import GlobeAltIcon from "@heroicons/react/solid/GlobeAltIcon";
 import MenuIcon from "@heroicons/react/solid/MenuIcon";
 import SearchIcon from "@heroicons/react/solid/SearchIcon";
 import UserCircleIcon from "@heroicons/react/solid/UserCircleIcon";
+import UsersIcon from "@heroicons/react/solid/UsersIcon";
 
 const AppBarRightContainer = styled.div`
   display: flex;
@@ -55,12 +56,6 @@ const DateRangePickerContainer = styled.div`
   }
 `;
 
-const GuestsHeader = styled.h2`
-  font-size: 1.5rem; /* 24px */
-  line-height: 2rem; /* 32px */
-  padding-left: 0.5rem; /* 8px */
-`;
-
 const HeroSearchIcon = styled(SearchIcon)`
   height: 2rem; /* 32px */
   background-color: rgb(248 113 113);
@@ -74,6 +69,10 @@ const HeroSearchIcon = styled(SearchIcon)`
   @media (min-width: 767px) and (max-width: 850px) {
     display: none;
   }
+`;
+
+const HeroUsersIcon = styled(UsersIcon)`
+  height: 1.25rem; /* 20px */
 `;
 
 const HostText = styled.p`
@@ -115,6 +114,20 @@ const HeroUserCircleIcon = styled(UserCircleIcon)`
   height: 1.5rem; /* 24px */
 `;
 
+const NumberOfGuestsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+`;
+
+const NumberOfGuestsHeader = styled.h2`
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+  font-weight: 600;
+  flex-grow: 1;
+  margin-bottom: 0px;
+`;
+
 const SearchInputContainer = styled.div`
   display: flex;
   align-items: center;
@@ -151,13 +164,15 @@ export default {
   AppBarRightContainer,
   Container,
   DateRangePickerContainer,
-  GuestsHeader,
   HeroGlobeAltIcon,
   HeroMenuIcon,
   HeroSearchIcon,
   HeroUserCircleIcon,
+  HeroUsersIcon,
   HostText,
   ImageContainer,
+  NumberOfGuestsContainer,
+  NumberOfGuestsHeader,
   SearchInputContainer,
   SearchInput
 };

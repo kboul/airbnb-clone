@@ -61,7 +61,12 @@ export default function Header() {
             rangeColors={rangeColors}
             ranges={[selectionRange]}
           />
-          <Styled.GuestsHeader>Number of Guests</Styled.GuestsHeader>
+          <Styled.NumberOfGuestsContainer>
+            <Styled.NumberOfGuestsHeader>
+              Number of Guests
+            </Styled.NumberOfGuestsHeader>
+            <Styled.HeroUsersIcon />
+          </Styled.NumberOfGuestsContainer>
         </Styled.DateRangePickerContainer>
       )}
     </Styled.Container>
