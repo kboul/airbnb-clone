@@ -1,10 +1,10 @@
 import Head from "next/head";
 
 import { Banner, Footer, Header, Main } from "../components";
-import exploreDataModel from "../models/exploreData";
+import exploreLocationsModel from "../models/exploreLocations";
 import cardsDataModel from "../models/cardsData";
 
-export default function Home({ cardsData, exploreData }) {
+export default function Home({ cardsData, exploreLocations }) {
   return (
     <>
       <Head>
@@ -17,14 +17,14 @@ export default function Home({ cardsData, exploreData }) {
 
       <Banner />
 
-      <Main cardsData={cardsData} exploreData={exploreData} />
+      <Main cardsData={cardsData} exploreLocations={exploreLocations} />
 
       <Footer />
     </>
   );
 }
 
-Home.propTypes = { ...exploreDataModel, ...cardsDataModel };
+Home.propTypes = { ...exploreLocationsModel, ...cardsDataModel };
 
 // prefetch this info on the server before painting the page
 export async function getStaticProps() {
@@ -33,11 +33,13 @@ export async function getStaticProps() {
     ? "http://localhost:3000"
     : "https://airbnb-clone-kboul.vercel.app/";
 
-  const exploreDataResponse = await fetch(`${apiUrl}/api/exploreData`);
-  const exploreData = await exploreDataResponse.json();
+  const exploreLocationsResponse = await fetch(
+    `${apiUrl}/api/exploreLocations`
+  );
+  const exploreLocations = await exploreLocationsResponse.json();
 
   const cardsDataResponse = await fetch(`${apiUrl}/api/cardsData`);
   const cardsData = await cardsDataResponse.json();
 
-  return { props: { exploreData, cardsData } };
+  return { props: { exploreLocations, cardsData } };
 }

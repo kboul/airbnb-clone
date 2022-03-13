@@ -8,5 +8,5 @@ export const exploreItem = {
 };
 
 export default {
-  exploreData: PropTypes.arrayOf(PropTypes.shape(exploreItem)).isRequired
+  exploreLocations: PropTypes.arrayOf(PropTypes.shape(exploreItem)).isRequired
 };

@@ -3,17 +3,17 @@ import MediumCard from "./MediumCard";
 import SmallCard from "./SmallCard";
 import Styled from "./styles";
 import cardsDataModel from "../../models/cardsData";
-import exploreDataModel from "../../models/exploreData";
+import exploreLocationsModel from "../../models/exploreLocations";
 import largeCard from "./largeCard.webp";
 
-export default function Main({ cardsData, exploreData }) {
+export default function Main({ cardsData, exploreLocations }) {
   return (
     <Styled.Container>
       <Styled.ExploreNearBySection>
         <Styled.ExploreHeader>Explore Nearby</Styled.ExploreHeader>
 
         <Styled.SmallCardContainer>
-          {exploreData?.map(item => (
+          {exploreLocations?.map(item => (
             <SmallCard key={item.id} {...item} />
           ))}
         </Styled.SmallCardContainer>
@@ -39,4 +39,4 @@ export default function Main({ cardsData, exploreData }) {
   );
 }
 
-Main.propTypes = { ...exploreDataModel, ...cardsDataModel };
+Main.propTypes = { ...exploreLocationsModel, ...cardsDataModel };
