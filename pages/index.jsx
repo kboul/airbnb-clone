@@ -5,6 +5,7 @@ import exploreLocationsModel from "../models/exploreLocations";
 import cardsModel from "../models/cards";
 
 export default function Home({ cards, exploreLocations }) {
+  console.log(cards);
   return (
     <>
       <Head>
@@ -31,7 +32,7 @@ export async function getStaticProps() {
   const dev = process.env.NODE_ENV !== "production";
   const apiUrl = dev
     ? "http://localhost:3000"
-    : "https://airbnb-clone-kboul.vercel.app/";
+    : "https://airbnb-clone-kboul.vercel.app";
 
   const exploreLocationsResponse = await fetch(
     `${apiUrl}/api/exploreLocations`

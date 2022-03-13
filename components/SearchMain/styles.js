@@ -47,6 +47,11 @@ const InfoMessage = styled.p`
   line-height: 1rem; /* 16px */
 `;
 
+const SearchResultsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Section = styled.section`
   flex-grow: 1;
   padding-top: 3.5rem; /* 56px */
@@ -67,6 +72,7 @@ export default {
   BubbleOption,
   Container,
   InfoMessage,
+  SearchResultsContainer,
   Section,
   StaysHeader
 };
