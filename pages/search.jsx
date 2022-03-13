@@ -7,16 +7,26 @@ export default function Search() {
   const router = useRouter();
 
   const { location, startDate, endDate, numOfGuests } = router.query;
-  const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
-  const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
-  const range = `${formattedStartDate} - ${formattedEndDate}`;
+  const paramsExist = Boolean(location);
+  let range;
+  if (paramsExist) {
+    const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
+    const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
+    range = `${formattedStartDate} - ${formattedEndDate}`;
+  }
 
   const placeholder = `${location} | ${range} | ${numOfGuests}`;
 
   return (
     <>
       <Header placeholder={placeholder} />
-      <SearchMain location={location} numOfGuests={numOfGuests} range={range} />
+      {paramsExist && (
+        <SearchMain
+          location={location}
+          numOfGuests={numOfGuests}
+          range={range}
+        />
+      )}
       <Footer />
     </>
   );

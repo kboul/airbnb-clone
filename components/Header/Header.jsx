@@ -54,6 +54,7 @@ export default function Header({ placeholder }) {
           objectFit="contain"
           objectPosition="left"
           onClick={handleLogoClick}
+          priority
           src={airbnbLogo}
         />
       </Styled.ImageContainer>
