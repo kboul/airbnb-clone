@@ -2,11 +2,11 @@ import LargeCard from "./LargeCard";
 import MediumCard from "./MediumCard";
 import SmallCard from "./SmallCard";
 import Styled from "./styles";
-import cardsDataModel from "../../models/cardsData";
+import cardsModel from "../../models/cards";
 import exploreLocationsModel from "../../models/exploreLocations";
 import largeCard from "./largeCard.webp";
 
-export default function Main({ cardsData, exploreLocations }) {
+export default function Main({ cards, exploreLocations }) {
   return (
     <Styled.Container>
       <Styled.ExploreNearBySection>
@@ -23,7 +23,7 @@ export default function Main({ cardsData, exploreLocations }) {
         <Styled.LiveAnywhereHeader>Live Anywhere</Styled.LiveAnywhereHeader>
 
         <Styled.MediumCardContainer>
-          {cardsData.map(item => (
+          {cards.map(item => (
             <MediumCard key={item.id} {...item} />
           ))}
         </Styled.MediumCardContainer>
@@ -39,4 +39,4 @@ export default function Main({ cardsData, exploreLocations }) {
   );
 }
 
-Main.propTypes = { ...exploreLocationsModel, ...cardsDataModel };
+Main.propTypes = { ...exploreLocationsModel, ...cardsModel };

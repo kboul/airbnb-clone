@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-export const cardItem = {
+export const card = {
   id: PropTypes.string,
   img: PropTypes.string,
   title: PropTypes.string
 };
 
 export default {
-  cardsData: PropTypes.arrayOf(PropTypes.shape(cardItem)).isRequired
+  cards: PropTypes.arrayOf(PropTypes.shape(card)).isRequired
 };

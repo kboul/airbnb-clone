@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const exploreItem = {
+export const exploreLocation = {
   distance: PropTypes.string,
   id: PropTypes.string,
   img: PropTypes.string,
@@ -8,5 +8,6 @@ export const exploreItem = {
 };
 
 export default {
-  exploreLocations: PropTypes.arrayOf(PropTypes.shape(exploreItem)).isRequired
+  exploreLocations: PropTypes.arrayOf(PropTypes.shape(exploreLocation))
+    .isRequired
 };

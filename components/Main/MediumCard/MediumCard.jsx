@@ -1,5 +1,5 @@
 import Styled from "./styles";
-import { cardItem } from "../../../models/cardsData";
+import { card as cardModel } from "../../../models/cards";
 
 export default function MediumCard({ img, title }) {
   return (
@@ -12,4 +12,4 @@ export default function MediumCard({ img, title }) {
   );
 }
 
-MediumCard.propTypes = cardItem;
+MediumCard.propTypes = cardModel;
