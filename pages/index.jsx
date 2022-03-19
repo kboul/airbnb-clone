@@ -5,7 +5,6 @@ import exploreLocationsModel from "../models/exploreLocations";
 import cardsModel from "../models/cards";
 
 export default function Home({ cards, exploreLocations }) {
-  console.log(cards);
   return (
     <>
       <Head>
@@ -29,17 +28,10 @@ Home.propTypes = { ...exploreLocationsModel, ...cardsModel };
 
 // prefetch this info on the server before painting the page
 export async function getStaticProps() {
-  const dev = process.env.NODE_ENV !== "production";
-  const apiUrl = dev
-    ? "http://localhost:3000"
-    : "https://airbnb-clone-kboul.vercel.app";
-
-  const exploreLocationsResponse = await fetch(
-    `${apiUrl}/api/exploreLocations`
-  );
+  const exploreLocationsResponse = await fetch("https://jsonkeeper.com/b/85AF");
   const exploreLocations = await exploreLocationsResponse.json();
 
-  const cardsResponse = await fetch(`${apiUrl}/api/cards`);
+  const cardsResponse = await fetch("https://jsonkeeper.com/b/2GMG");
   const cards = await cardsResponse.json();
 
   return { props: { exploreLocations, cards } };

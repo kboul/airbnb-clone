@@ -36,12 +36,7 @@ export default function Search({ searchResults }) {
 Search.propTypes = appartmentsModel;
 
 export async function getServerSideProps() {
-  const dev = process.env.NODE_ENV !== "production";
-  const apiUrl = dev
-    ? "http://localhost:3000"
-    : "https://airbnb-clone-kboul.vercel.app";
-
-  const searchResultsResponse = await fetch(`${apiUrl}/api/appartments`);
+  const searchResultsResponse = await fetch("https://jsonkeeper.com/b/C4LN");
   const searchResults = await searchResultsResponse.json();
   return { props: { searchResults } };
 }
