@@ -1,5 +1,5 @@
 import Styled from "./styles";
-import { exploreItem } from "../../../models/exploreData";
+import { exploreLocation as exploreLocationModel } from "../../../models/exploreLocations";
 
 export default function SmallCard({ distance, id, img, location }) {
   return (
@@ -16,4 +16,4 @@ export default function SmallCard({ distance, id, img, location }) {
   );
 }
 
-SmallCard.propTypes = exploreItem;
+SmallCard.propTypes = exploreLocationModel;

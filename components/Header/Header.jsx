@@ -3,16 +3,20 @@ import Image from "next/image";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
+import { useRouter } from "next/router";
+import PropTypes from "prop-types";
 
 import Styled from "./styles";
 import airbnbLogo from "./airbnb-logo.png";
 import { getSelectionRange } from "./utils";
 import { rangeColors } from "./constants";
 
-export default function Header() {
+export default function Header({ placeholder }) {
+  const router = useRouter();
+
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
   const [numOfGuests, setNumOfGuests] = useState(1);
 
   const selectionRange = getSelectionRange(startDate, endDate);
@@ -21,12 +25,26 @@ export default function Header() {
 
   const handleDateSelect = ranges => {
     setStartDate(ranges.selection.startDate);
-    setStartDate(ranges.selection.endDate);
+    setEndDate(ranges.selection.endDate);
   };
 
   const handleNumOfGuestsChange = e => setNumOfGuests(e.target.value);
 
   const handleCancelClick = () => setSearchInput("");
+
+  const handleSearchClick = () => {
+    router.push({
+      pathname: "/search",
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+        numOfGuests
+      }
+    });
+  };
+
+  const handleLogoClick = () => router.push("/");
 
   return (
     <Styled.Container>
@@ -35,6 +53,8 @@ export default function Header() {
           layout="fill"
           objectFit="contain"
           objectPosition="left"
+          onClick={handleLogoClick}
+          priority
           src={airbnbLogo}
         />
       </Styled.ImageContainer>
@@ -42,7 +62,7 @@ export default function Header() {
       <Styled.SearchInputContainer>
         <Styled.SearchInput
           onChange={handleSearchInputChange}
-          placeholder="Where are you going?"
+          placeholder={placeholder || "Where are you going?"}
           value={searchInput}
         />
         <Styled.HeroSearchIcon />
@@ -82,10 +102,16 @@ export default function Header() {
             <Styled.CancelButton onClick={handleCancelClick}>
               Cancel
             </Styled.CancelButton>
-            <Styled.SearchButton>Search</Styled.SearchButton>
+            <Styled.SearchButton onClick={handleSearchClick}>
+              Search
+            </Styled.SearchButton>
           </Styled.ButtonContainer>
         </Styled.DateRangePickerContainer>
       )}
     </Styled.Container>
   );
 }
+
+Header.propTypes = {
+  placeholder: PropTypes.string
+};
