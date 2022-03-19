@@ -50,6 +50,7 @@ const InfoMessage = styled.p`
 const SearchResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 `;
 
 const Section = styled.section`
