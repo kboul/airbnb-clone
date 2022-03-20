@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useMemo } from "react";
 
 import InfoCard from "./InfoCard";
 import Map from "../Map";
@@ -12,6 +13,15 @@ export default function SearchMain({
   range,
   searchResults
 }) {
+  const locationsCoordinates = useMemo(
+    () =>
+      searchResults.map(({ long, lat }) => ({
+        latitude: lat,
+        longitude: long
+      })),
+    [searchResults]
+  );
+
   return (
     <Styled.Container>
       <Styled.CardsSection>
@@ -34,7 +44,7 @@ export default function SearchMain({
       </Styled.CardsSection>
 
       <Styled.MapSection>
-        <Map />
+        <Map locationsCoordinates={locationsCoordinates} />
       </Styled.MapSection>
     </Styled.Container>
   );
