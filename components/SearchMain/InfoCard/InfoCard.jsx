@@ -30,7 +30,7 @@ export default function InfoCard({
 
         <Styled.StarCostContainer>
           <Styled.StarText>
-            <Styled.HeroStarIcon />
+            <Styled.HeroStarIcon fill="#fe595e" />
             {star}
           </Styled.StarText>
 
