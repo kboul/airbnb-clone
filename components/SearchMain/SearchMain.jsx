@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 import InfoCard from "./InfoCard";
+import Map from "../Map";
 import Styled from "./styles";
 import { bubbleOptions } from "./constants";
 import appartmentsModel from "../../models/appartments";
@@ -13,7 +14,7 @@ export default function SearchMain({
 }) {
   return (
     <Styled.Container>
-      <Styled.Section>
+      <Styled.CardsSection>
         <Styled.InfoMessage>
           300+ stays - {range} - for {numOfGuests} guests
         </Styled.InfoMessage>
@@ -30,7 +31,11 @@ export default function SearchMain({
             <InfoCard key={item.id} {...item} />
           ))}
         </Styled.SearchResultsContainer>
-      </Styled.Section>
+      </Styled.CardsSection>
+
+      <Styled.MapSection>
+        <Map />
+      </Styled.MapSection>
     </Styled.Container>
   );
 }

@@ -4,6 +4,12 @@ import { format } from "date-fns";
 import { Footer, Header, SearchMain } from "../components";
 import appartmentsModel from "../models/appartments";
 
+export async function getServerSideProps() {
+  const searchResultsResponse = await fetch("https://jsonkeeper.com/b/C4LN");
+  const searchResults = await searchResultsResponse.json();
+  return { props: { searchResults } };
+}
+
 export default function Search({ searchResults }) {
   const router = useRouter();
   const { location, startDate, endDate, numOfGuests } = router.query;
@@ -20,6 +26,7 @@ export default function Search({ searchResults }) {
   return (
     <>
       <Header placeholder={placeholder} />
+
       {paramsExist && (
         <SearchMain
           location={location}
@@ -28,15 +35,10 @@ export default function Search({ searchResults }) {
           searchResults={searchResults}
         />
       )}
+
       <Footer />
     </>
   );
 }
 
 Search.propTypes = appartmentsModel;
-
-export async function getServerSideProps() {
-  const searchResultsResponse = await fetch("https://jsonkeeper.com/b/C4LN");
-  const searchResults = await searchResultsResponse.json();
-  return { props: { searchResults } };
-}
