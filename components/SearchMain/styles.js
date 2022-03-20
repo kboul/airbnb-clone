@@ -67,7 +67,6 @@ const MapSection = styled.section`
 const SearchResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
 `;
 
 const StaysHeader = styled.h1`

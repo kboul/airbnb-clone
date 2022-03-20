@@ -13,11 +13,12 @@ export default function SearchMain({
   range,
   searchResults
 }) {
-  const locationsCoordinates = useMemo(
+  const popupInfo = useMemo(
     () =>
-      searchResults.map(({ long, lat }) => ({
+      searchResults.map(({ long, lat, title }) => ({
         latitude: lat,
-        longitude: long
+        longitude: long,
+        title
       })),
     [searchResults]
   );
@@ -44,7 +45,7 @@ export default function SearchMain({
       </Styled.CardsSection>
 
       <Styled.MapSection>
-        <Map locationsCoordinates={locationsCoordinates} />
+        <Map popupInfo={popupInfo} />
       </Styled.MapSection>
     </Styled.Container>
   );
