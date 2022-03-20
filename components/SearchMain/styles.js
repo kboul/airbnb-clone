@@ -28,7 +28,7 @@ const BubbleOption = styled.p`
 const BubbleOptionContainer = styled.div`
   display: none;
 
-  /* Large Devices, .visible-lg-* */
+  // Large Devices
   @media (min-width: 1200px) {
     display: inline-flex;
     margin-bottom: 1.25rem; /* 20px */
@@ -36,6 +36,13 @@ const BubbleOptionContainer = styled.div`
     white-space: nowrap;
     gap: 15px; //space-x-
   }
+`;
+
+const CardsSection = styled.section`
+  flex-grow: 1;
+  padding-top: 3.5rem; /* 56px */
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.5rem; /* 24px */
 `;
 
 const Container = styled.main`
@@ -47,17 +54,19 @@ const InfoMessage = styled.p`
   line-height: 1rem; /* 16px */
 `;
 
+const MapSection = styled.section`
+  display: none;
+
+  // Large Devices
+  @media (min-width: 1200px) {
+    display: inline-flex;
+    min-width: 600px;
+  }
+`;
+
 const SearchResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
-`;
-
-const Section = styled.section`
-  flex-grow: 1;
-  padding-top: 3.5rem; /* 56px */
-  padding-left: 1.5rem; /* 24px */
-  padding-right: 1.5rem; /* 24px */
 `;
 
 const StaysHeader = styled.h1`
@@ -71,9 +80,10 @@ const StaysHeader = styled.h1`
 export default {
   BubbleOptionContainer,
   BubbleOption,
+  CardsSection,
   Container,
   InfoMessage,
+  MapSection,
   SearchResultsContainer,
-  Section,
   StaysHeader
 };
