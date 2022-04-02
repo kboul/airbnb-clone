@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Styled from "./styles";
 import { appartment as appartmentModel } from "../../../models/appartments";
 
@@ -5,13 +7,14 @@ export default function InfoCard({
   description,
   img,
   location,
+  onClick,
   price,
   star,
   title,
   total
 }) {
   return (
-    <Styled.Container>
+    <Styled.Container onClick={onClick}>
       <Styled.ImageContainer>
         <Styled.InfoImage layout="fill" objectFit="cover" priority src={img} />
       </Styled.ImageContainer>
@@ -44,4 +47,4 @@ export default function InfoCard({
   );
 }
 
-InfoCard.propTypes = appartmentModel;
+InfoCard.propTypes = { ...appartmentModel, onClick: PropTypes.func.isRequired };

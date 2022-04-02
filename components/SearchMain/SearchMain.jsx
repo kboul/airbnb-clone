@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
-import { useMemo } from "react";
+import { useMemo, useCallback } from "react";
 
 import InfoCard from "./InfoCard";
 import Map from "../Map";
 import Styled from "./styles";
+import { useStore } from "../../hooks";
 import { bubbleOptions } from "./constants";
 import appartmentsModel from "../../models/appartments";
 
@@ -13,6 +14,8 @@ export default function SearchMain({
   range,
   searchResults
 }) {
+  const changeCoordinates = useStore(state => state.changeCoordinates);
+
   const popupInfo = useMemo(
     () =>
       searchResults.map(({ long, lat, title }) => ({
@@ -21,6 +24,13 @@ export default function SearchMain({
         title
       })),
     [searchResults]
+  );
+
+  const handleCardClick = useCallback(
+    item => {
+      changeCoordinates(item.lat, item.long);
+    },
+    [changeCoordinates]
   );
 
   return (
@@ -39,7 +49,11 @@ export default function SearchMain({
 
         <Styled.SearchResultsContainer>
           {searchResults.map(item => (
-            <InfoCard key={item.id} {...item} />
+            <InfoCard
+              key={item.id}
+              {...item}
+              onClick={() => handleCardClick(item)}
+            />
           ))}
         </Styled.SearchResultsContainer>
       </Styled.CardsSection>
