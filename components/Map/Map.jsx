@@ -18,8 +18,8 @@ export default function Map({ popupInfo }) {
   const mapRef = useRef();
 
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
+    const map = mapRef?.current;
+    if (!map || !appartmentLat || !appartmentLng) return;
 
     map.flyTo({ center: [appartmentLng, appartmentLat], zoom: 14 });
   }, [appartmentLat, appartmentLng]);
@@ -36,7 +36,7 @@ export default function Map({ popupInfo }) {
 
   const handleMarkerClick = info => () => setSelectedLocation(info);
 
-  const handleMove = useCallback(viewport => setViewState(viewport), []);
+  const handleMove = useCallback(({ vieState }) => setViewState(vieState), []);
 
   const handlePopupClose = () => setSelectedLocation(null);
 
