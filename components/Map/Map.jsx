@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import PropTypes from "prop-types";
@@ -11,15 +11,15 @@ const style = { width: "100%", height: "100%" };
 const mapboxAccessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 const mapStyle = process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL;
 
-export default function Map({ popupInfo }) {
+function Map({ popupInfo }) {
   const appartmentLat = useStore(useCallback(state => state.appartmentLat, []));
   const appartmentLng = useStore(useCallback(state => state.appartmentLng, []));
 
   const mapRef = useRef();
 
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
+    const map = mapRef?.current;
+    if (!map || !appartmentLat || !appartmentLng) return;
 
     map.flyTo({ center: [appartmentLng, appartmentLat], zoom: 14 });
   }, [appartmentLat, appartmentLng]);
@@ -34,12 +34,6 @@ export default function Map({ popupInfo }) {
 
   const [selectedLocation, setSelectedLocation] = useState(null);
 
-  const handleMarkerClick = info => () => setSelectedLocation(info);
-
-  const handleMove = useCallback(viewport => setViewState(viewport), []);
-
-  const handlePopupClose = () => setSelectedLocation(null);
-
   const pins = useMemo(
     () =>
       popupInfo.map((info, index) => (
@@ -47,14 +41,14 @@ export default function Map({ popupInfo }) {
           <Marker {...info}>
             <Styled.MarkerIcon
               aria-label="marker-pin"
-              onClick={handleMarkerClick(info)}
+              onClick={() => setSelectedLocation(info)}
               role="img">
               📌
             </Styled.MarkerIcon>
           </Marker>
         </Styled.MarkerContainer>
       )),
-    [popupInfo]
+    []
   );
 
   return (
@@ -63,7 +57,7 @@ export default function Map({ popupInfo }) {
       style={style}
       mapboxAccessToken={mapboxAccessToken}
       mapStyle={mapStyle}
-      onMove={handleMove}
+      onMove={evt => setViewState(evt.viewState)}
       ref={mapRef}>
       {pins}
 
@@ -73,7 +67,7 @@ export default function Map({ popupInfo }) {
           closeOnClick={false}
           latitude={selectedLocation.latitude}
           longitude={selectedLocation.longitude}
-          onClose={handlePopupClose}>
+          onClose={() => setSelectedLocation(null)}>
           {selectedLocation.title}
         </Popup>
       )}
@@ -90,3 +84,5 @@ Map.propTypes = {
     }).isRequired
   )
 };
+
+export default memo(Map);

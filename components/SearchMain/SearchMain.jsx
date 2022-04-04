@@ -23,14 +23,12 @@ export default function SearchMain({
         longitude: long,
         title
       })),
-    [searchResults]
+    []
   );
 
   const handleCardClick = useCallback(
-    item => {
-      changeCoordinates(item.lat, item.long);
-    },
-    [changeCoordinates]
+    item => changeCoordinates(item.lat, item.long),
+    []
   );
 
   return (
