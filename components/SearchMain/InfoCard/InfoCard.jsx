@@ -2,6 +2,7 @@ import { useCallback } from "react";
 
 import Styled from "./styles";
 import { useStore } from "../../../hooks";
+import { airbnbColor } from "../../../constants";
 
 export default function InfoCard() {
   const searchResults = useStore(useCallback(state => state.searchResults, []));
@@ -40,7 +41,7 @@ export default function InfoCard() {
 
         <Styled.StarCostContainer>
           <Styled.StarText>
-            <Styled.HeroStarIcon fill="#fe595e" />
+            <Styled.HeroStarIcon fill={airbnbColor} />
             {item.star}
           </Styled.StarText>
 

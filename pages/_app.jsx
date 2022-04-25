@@ -3,9 +3,11 @@ import { createGlobalStyle } from "styled-components";
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
 
+import { airbnbColor } from "../constants";
+
 const progress = new ProgressBar({
   size: 2,
-  color: "#FE595E",
+  color: airbnbColor,
   className: "z-50",
   delay: 100
 });
