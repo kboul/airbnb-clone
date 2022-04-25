@@ -1,8 +1,10 @@
+import { useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
+import PropTypes from "prop-types";
 
 import { Footer, Header, SearchMain } from "../components";
-import appartmentsModel from "../models/appartments";
+import { useStore } from "../hooks";
 
 export async function getServerSideProps() {
   const searchResultsResponse = await fetch("https://jsonkeeper.com/b/C4LN");
@@ -11,6 +13,12 @@ export async function getServerSideProps() {
 }
 
 export default function Search({ searchResults }) {
+  const setGlobalState = useStore(
+    useCallback(state => state.setGlobalState, [])
+  );
+
+  useEffect(() => setGlobalState({ searchResults }), []);
+
   const router = useRouter();
   const { location, startDate, endDate, numOfGuests } = router.query;
   const paramsExist = Boolean(location);
@@ -32,7 +40,6 @@ export default function Search({ searchResults }) {
           location={location}
           numOfGuests={numOfGuests}
           range={range}
-          searchResults={searchResults}
         />
       )}
 
@@ -41,4 +48,19 @@ export default function Search({ searchResults }) {
   );
 }
 
-Search.propTypes = appartmentsModel;
+Search.propTypes = {
+  searchResults: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      img: PropTypes.string,
+      location: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      star: PropTypes.number,
+      price: PropTypes.string,
+      total: PropTypes.string,
+      long: PropTypes.number,
+      lat: PropTypes.number
+    })
+  ).isRequired
+};

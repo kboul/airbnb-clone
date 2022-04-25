@@ -1,8 +1,14 @@
-import Styled from "./styles";
-import { exploreLocation as exploreLocationModel } from "../../../models/exploreLocations";
+import { useCallback } from "react";
 
-export default function SmallCard({ distance, id, img, location }) {
-  return (
+import Styled from "./styles";
+import { useStore } from "../../../hooks";
+
+export default function SmallCard() {
+  const exploreLocations = useStore(
+    useCallback(state => state.exploreLocations, [])
+  );
+
+  return exploreLocations?.map(({ distance, id, img, location }) => (
     <Styled.Container key={id}>
       <Styled.CardImageContainer>
         <Styled.CardImage src={img} layout="fill" />
@@ -13,7 +19,5 @@ export default function SmallCard({ distance, id, img, location }) {
         <Styled.DistanceH4>{distance}</Styled.DistanceH4>
       </Styled.InfoContainer>
     </Styled.Container>
-  );
+  ));
 }
-
-SmallCard.propTypes = exploreLocationModel;

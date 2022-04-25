@@ -1,36 +1,11 @@
 import PropTypes from "prop-types";
-import { useMemo, useCallback } from "react";
 
 import InfoCard from "./InfoCard";
 import Map from "../Map";
 import Styled from "./styles";
-import { useStore } from "../../hooks";
 import { bubbleOptions } from "./constants";
-import appartmentsModel from "../../models/appartments";
 
-export default function SearchMain({
-  numOfGuests,
-  location,
-  range,
-  searchResults
-}) {
-  const changeCoordinates = useStore(state => state.changeCoordinates);
-
-  const popupInfo = useMemo(
-    () =>
-      searchResults.map(({ long, lat, title }) => ({
-        latitude: lat,
-        longitude: long,
-        title
-      })),
-    []
-  );
-
-  const handleCardClick = useCallback(
-    item => changeCoordinates(item.lat, item.long),
-    []
-  );
-
+export default function SearchMain({ numOfGuests, location, range }) {
   return (
     <Styled.Container>
       <Styled.CardsSection>
@@ -46,18 +21,12 @@ export default function SearchMain({
         </Styled.BubbleOptionContainer>
 
         <Styled.SearchResultsContainer>
-          {searchResults.map(item => (
-            <InfoCard
-              key={item.id}
-              {...item}
-              onClick={() => handleCardClick(item)}
-            />
-          ))}
+          <InfoCard />
         </Styled.SearchResultsContainer>
       </Styled.CardsSection>
 
       <Styled.MapSection>
-        <Map popupInfo={popupInfo} />
+        <Map />
       </Styled.MapSection>
     </Styled.Container>
   );
@@ -66,6 +35,5 @@ export default function SearchMain({
 SearchMain.propTypes = {
   numOfGuests: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  range: PropTypes.string.isRequired,
-  ...appartmentsModel
+  range: PropTypes.string.isRequired
 };
