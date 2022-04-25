@@ -1,8 +1,10 @@
+import { useCallback } from "react";
+
 import { useStore } from "../../../hooks";
 import Styled from "./styles";
 
 export default function MediumCard() {
-  const cards = useStore(state => state.cards);
+  const cards = useStore(useCallback(state => state.cards, []));
 
   return cards?.map(({ id, img, title }) => (
     <Styled.Container key={id}>

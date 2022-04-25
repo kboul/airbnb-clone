@@ -1,8 +1,12 @@
+import { useCallback } from "react";
+
 import Styled from "./styles";
 import { useStore } from "../../../hooks";
 
 export default function SmallCard() {
-  const exploreLocations = useStore(state => state.exploreLocations);
+  const exploreLocations = useStore(
+    useCallback(state => state.exploreLocations, [])
+  );
 
   return exploreLocations?.map(({ distance, id, img, location }) => (
     <Styled.Container key={id}>

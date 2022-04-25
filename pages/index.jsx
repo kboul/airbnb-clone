@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { Banner, Footer, Header, Main } from "../components";
@@ -17,11 +17,11 @@ export async function getStaticProps() {
 }
 
 export default function Home({ cards, exploreLocations }) {
-  const setGlobalState = useStore(state => state.setGlobalState);
+  const setGlobalState = useStore(
+    useCallback(state => state.setGlobalState, [])
+  );
 
-  useEffect(() => {
-    setGlobalState({ cards, exploreLocations });
-  }, []);
+  useEffect(() => setGlobalState({ cards, exploreLocations }), []);
 
   return (
     <>

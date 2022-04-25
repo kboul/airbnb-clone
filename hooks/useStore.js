@@ -1,12 +1,9 @@
 import create from "zustand";
 
 const useStore = create(set => ({
-  appartmentLat: null,
-  appartmentLng: null,
   cards: [],
   exploreLocations: [],
-  changeCoordinates: (appartmentLat, appartmentLng) =>
-    set({ appartmentLat, appartmentLng }),
+  viewState: { longitude: 23, latitude: 37, zoom: 11 },
   setGlobalState: data => set({ ...data })
 }));
 
