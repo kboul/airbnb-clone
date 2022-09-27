@@ -4,16 +4,22 @@ import PropTypes from "prop-types";
 
 import { Banner, Footer, Header, Main } from "../components";
 import { useStore } from "../hooks";
+import exploreLocationsData from "./api/exploreLocations.json";
+import cardsData from "./api/cards.json";
 
 // prefetch this info on the server before painting the page
 export async function getStaticProps() {
-  const exploreLocationsResponse = await fetch("https://jsonkeeper.com/b/85AF");
-  const exploreLocations = await exploreLocationsResponse.json();
+  // const exploreLocationsResponse = await fetch(
+  //   "https://links.papareact.com/pyp"
+  // );
+  // const exploreLocations = await exploreLocationsResponse.json();
 
-  const cardsResponse = await fetch("https://jsonkeeper.com/b/2GMG");
-  const cards = await cardsResponse.json();
+  // const cardsResponse = await fetch("https://links.papareact.com/zp1");
+  // const cards = await cardsResponse.json();
 
-  return { props: { exploreLocations, cards } };
+  return {
+    props: { exploreLocations: exploreLocationsData, cards: cardsData }
+  };
 }
 
 export default function Home({ cards, exploreLocations }) {

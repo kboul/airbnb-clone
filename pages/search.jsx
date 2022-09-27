@@ -5,11 +5,12 @@ import PropTypes from "prop-types";
 
 import { Footer, Header, SearchMain } from "../components";
 import { useStore } from "../hooks";
+import searchResultsData from "./api/searchResults.json";
 
 export async function getServerSideProps() {
-  const searchResultsResponse = await fetch("https://jsonkeeper.com/b/C4LN");
-  const searchResults = await searchResultsResponse.json();
-  return { props: { searchResults } };
+  // const searchResultsResponse = await fetch("https://links.papareact.com/isz");
+  // const searchResults = await searchResultsResponse.json();
+  return { props: { searchResults: searchResultsData } };
 }
 
 export default function Search({ searchResults }) {

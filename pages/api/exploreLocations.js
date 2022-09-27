@@ -5,5 +5,4 @@ export default function handler(req, res) {
   res.status(200).json(exploreLocations);
 }
 
-// https://jsonkeeper.com/b/4G1G
-// https://jsonkeeper.com/b/85AF
+// links.papareact.com/isz
