@@ -2,6 +2,15 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Create .env.local file and include the following env vars:
+
+```
+NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=...
+NEXT_PUBLIC_MAPBOX_STYLE_URL=...
+```
+
+The first, which is complulsory, corresponds to a valid mapbox token and the latter is optional and it adds a personal style to the map tiles.
+
 ## Getting Started
 
 First, run the development server:
